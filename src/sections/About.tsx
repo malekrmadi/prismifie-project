@@ -5,7 +5,7 @@ export function About() {
         <section
             id="about"
             style={{
-                background: "url(/src/assets/prismifie-backgound_light.png) center/cover no-repeat",
+                background: "url(/public/prismifie-backgound_light.png) center/cover no-repeat",
                 minHeight: "100vh",
                 display: "flex",
                 flexDirection: "column",

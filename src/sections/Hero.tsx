@@ -6,7 +6,7 @@ export function Hero() {
         <section
             className="hero-section"
             style={{
-                backgroundImage: 'url(/src/assets/hero-background.png)',
+                backgroundImage: 'url(/public/hero-background.png)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
@@ -97,7 +97,7 @@ export function Hero() {
                     className="hero-logo-container"
                 >
                     <motion.img
-                        src="/src/assets/logo.png"
+                        src="/public/logo.png"
                         alt="Prismify Logo"
                         className="hero-logo-img"
                         animate={{ y: [0, -10, 0] }}

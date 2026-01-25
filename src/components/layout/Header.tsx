@@ -131,7 +131,7 @@ export function Header() {
 
                     {/* LOGO */}
                     <a href="#" className="logo">
-                        <img src="/src/assets/prismifie-text-header.png" alt="Prismify" style={{ height: '80px', maxWidth: '300px', objectFit: 'contain' }} />
+                        <img src="/public/prismifie-text-header.png" alt="Prismify" style={{ height: '80px', maxWidth: '300px', objectFit: 'contain' }} />
                     </a>
 
                     {/* NAV DESKTOP */}
