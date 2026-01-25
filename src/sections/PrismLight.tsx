@@ -19,26 +19,6 @@ export function PrismLight() {
                     margin: 0 auto;
                 }
 
-                .prism-logo-tagline {
-                    text-align: center;
-                    margin-bottom: 60px;
-                }
-
-                .prism-logo-img {
-                    max-width: 200px;
-                    height: auto;
-                    margin: 0 auto 20px;
-                    display: block;
-                }
-
-                .prism-tagline-text {
-                    font-family: 'Inter', sans-serif;
-                    font-size: 18px;
-                    font-weight: 500;
-                    color: #555;
-                    font-style: italic;
-                }
-
                 .prism-title {
                     font-family: 'Space Grotesk', sans-serif;
                     font-size: clamp(36px, 5vw, 52px);
@@ -134,24 +114,12 @@ export function PrismLight() {
             `}</style>
 
             <div className="prism-content-wrapper">
-                {/* Logo + Tagline */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="prism-logo-tagline"
-                >
-                    <img src="/logo.png" alt="prismifie" className="prism-logo-img" />
-                    <p className="prism-tagline-text">« Aidons-nous à façonner l'avenir »</p>
-                </motion.div>
-
                 {/* Title */}
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    transition={{ duration: 0.8 }}
                     className="prism-title"
                 >
                     Le Concept <span className="text-primary">Prism</span>
@@ -162,7 +130,7 @@ export function PrismLight() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
                     className="prism-text-container"
                 >
                     <p className="prism-text">
@@ -184,7 +152,7 @@ export function PrismLight() {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
                     className="transformation-flow"
                 >
                     <motion.div whileHover={{ scale: 1.05 }} className="flow-card">

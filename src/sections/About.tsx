@@ -9,9 +9,9 @@ export function About() {
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        justifyContent: "space-between",
         alignItems: "center",
-        padding: "80px 24px",
+        padding: "100px 24px",
         position: "relative",
       }}
     >
@@ -25,7 +25,6 @@ export function About() {
           text-align: center;
           line-height: 1.15;
           text-shadow: 0 4px 20px rgba(0,0,0,0.3);
-          margin-bottom: 40px;
           max-width: 900px;
         }
 
@@ -57,7 +56,7 @@ export function About() {
         }
       `}</style>
 
-      {/* TITLE */}
+      {/* TITLE - TOP */}
       <motion.h2
         initial={{ opacity: 0, y: -40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +68,7 @@ export function About() {
         spectre de possibilités
       </motion.h2>
 
-      {/* TEXT */}
+      {/* TEXT - BOTTOM */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

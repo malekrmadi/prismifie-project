@@ -17,6 +17,7 @@ export function Footer() {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           gap: 48px;
+          align-items: start;
         }
 
         .footer-heading {
@@ -32,7 +33,21 @@ export function Footer() {
           font-size: 14px;
           line-height: 1.8;
           color: #cbd5f5;
-          margin: 0;
+          margin: 0 0 8px 0;
+        }
+
+        .footer-link {
+          display: block;
+          font-size: 14px;
+          line-height: 1.8;
+          color: #cbd5f5;
+          text-decoration: none;
+          margin-bottom: 8px;
+          transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+          color: #ff5fa2;
         }
 
         .footer-socials {
@@ -63,16 +78,29 @@ export function Footer() {
           transform: translateY(-2px);
         }
 
+        .footer-logo-container {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .footer-logo-img {
+          max-width: 80px;
+          height: auto;
+          margin-bottom: 16px;
+          opacity: 0.9;
+        }
+
         .footer-inspiration {
-          font-size: 16px;
+          font-size: 15px;
           font-weight: 300;
           line-height: 1.6;
           color: #f1f5f9;
-          max-width: 260px;
+          margin-bottom: 12px;
         }
 
         .footer-copy {
-          margin-top: 24px;
+          margin-top: 16px;
           font-size: 12px;
           color: #94a3b8;
           letter-spacing: 1px;
@@ -95,8 +123,18 @@ export function Footer() {
             justify-content: center;
           }
 
+          .footer-logo-container {
+            align-items: center;
+          }
+
           .footer-inspiration {
-            margin: 0 auto;
+            text-align: center;
+          }
+
+          .footer-logo-img {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
           }
         }
       `}</style>
@@ -105,27 +143,34 @@ export function Footer() {
       <footer className="footer-section">
         <div className="footer-container">
 
-          {/* Col 1: Adresse */}
+          {/* Col 1: À propos */}
           <div className="footer-col">
-            <h3 className="footer-heading">Adresse</h3>
+            <h3 className="footer-heading">À propos</h3>
             <div className="footer-text">
-              <p>123 Avenue de la Clarté</p>
+              <p>prismifie transforme vos idées en stratégies claires et impactantes.</p>
+              <p style={{ marginTop: '16px' }}>123 Avenue de la Clarté</p>
               <p>75000 Paris, France</p>
             </div>
           </div>
 
-          {/* Col 2: Contact */}
+          {/* Col 2: Liens rapides */}
+          <div className="footer-col">
+            <h3 className="footer-heading">Liens rapides</h3>
+            <a href="#concept" className="footer-link">Concept</a>
+            <a href="#about" className="footer-link">À propos</a>
+            <a href="#prestations" className="footer-link">Services</a>
+            <a href="#faq" className="footer-link">FAQ</a>
+            <a href="#contact" className="footer-link">Contact</a>
+          </div>
+
+          {/* Col 3: Contact & Socials */}
           <div className="footer-col">
             <h3 className="footer-heading">Contact</h3>
             <div className="footer-text">
               <p>hello@prismifie.com</p>
               <p>+33 1 23 45 67 89</p>
             </div>
-          </div>
-
-          {/* Col 3: Socials */}
-          <div className="footer-col">
-            <h3 className="footer-heading">Suivez-nous</h3>
+            <h3 className="footer-heading" style={{ marginTop: '24px' }}>Suivez-nous</h3>
             <div className="footer-socials">
               <a href="#" className="social-icon" aria-label="Instagram">
                 <Instagram size={18} />
@@ -142,14 +187,20 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Col 4: Inspiration */}
+          {/* Col 4: Logo + Inspiration */}
           <div className="footer-col">
-            <p className="footer-inspiration">
-              « Aidons-nous à façonner l'avenir. »
-            </p>
-            <p className="footer-copy">
-              PRISMIFIE © {new Date().getFullYear()}
-            </p>
+            <div className="footer-logo-container">
+              <img src="/logo.png" alt="prismifie" className="footer-logo-img" />
+              <p className="footer-inspiration">
+                « Aidons-nous à façonner l'avenir. »
+              </p>
+              <p className="footer-inspiration" style={{ fontSize: '13px', opacity: '0.8' }}>
+                Clarté · Créativité · Confiance
+              </p>
+              <p className="footer-copy">
+                PRISMIFIE © {new Date().getFullYear()}
+              </p>
+            </div>
           </div>
 
         </div>
