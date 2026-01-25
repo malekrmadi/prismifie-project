@@ -28,8 +28,8 @@ export function Hero() {
 
         .hero-logo-container {
           width: 100%;
-          max-width: 300px;
-          margin: 0 auto 48px;
+          max-width: 380px;
+          margin: 0 auto 24px;
         }
 
         .hero-logo-img {
@@ -38,14 +38,36 @@ export function Hero() {
           filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
         }
 
+        .hero-tagline {
+          text-align: center;
+          font-size: 16px;
+          font-weight: 500;
+          color: #555;
+          margin-bottom: 48px;
+          font-style: italic;
+        }
+
         .hero-pillars {
           display: flex;
           gap: 16px;
           align-items: center;
           font-size: 18px;
-          font-weight: 500;
+          font-weight: 600;
           color: #333;
           margin-bottom: 32px;
+        }
+
+        .hero-pillar-item {
+          padding: 12px 24px;
+          border-radius: 8px;
+          transition: all 0.4s ease;
+          cursor: default;
+        }
+
+        .hero-pillar-item:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 20px rgba(255, 95, 162, 0.25);
+          background: linear-gradient(135deg, rgba(255, 95, 162, 0.08), rgba(123, 92, 255, 0.08));
         }
 
         .hero-pillar-separator {
@@ -98,7 +120,7 @@ export function Hero() {
         >
           <motion.img
             src="/logo.png"
-            alt="Prismify Logo"
+            alt="prismifie Logo"
             className="hero-logo-img"
             animate={{ y: [0, -10, 0] }}
             transition={{
@@ -108,6 +130,16 @@ export function Hero() {
             }}
           />
         </motion.div>
+
+        {/* Tagline */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="hero-tagline"
+        >
+          « Aidons-nous à façonner l'avenir »
+        </motion.p>
 
         {/* Pillars */}
         <motion.div

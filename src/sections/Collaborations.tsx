@@ -5,9 +5,32 @@ export function Collaborations() {
     const partners = ["TechStart", "GlobalCorp", "InnovateX", "FutureWorks", "AlphaGroup", "OmegaSolutions", "TechStart", "GlobalCorp", "InnovateX", "FutureWorks", "AlphaGroup", "OmegaSolutions"];
 
     return (
-        <section className="collab-section">
-            <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
-                <h3 className="text-sm font-bold uppercase tracking-widest text-primary mb-2">Ils nous font confiance</h3>
+        <section className="collab-section" style={{ backgroundColor: '#f3e8ff' }}>
+            <style>{`
+                .collab-section {
+                    padding: 5rem 0;
+                    overflow: hidden;
+                }
+
+                .collab-header {
+                    max-width: 1400px;
+                    margin: 0 auto;
+                    padding: 0 24px;
+                    margin-bottom: 32px;
+                    text-align: center;
+                }
+
+                .collab-title {
+                    font-size: 14px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    color: #EC4899;
+                }
+            `}</style>
+
+            <div className="collab-header">
+                <h3 className="collab-title">Ils nous font confiance</h3>
             </div>
 
             <div className="collab-track">

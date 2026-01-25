@@ -47,7 +47,7 @@ export function Prestations() {
                 .prestations-wrapper {
                     max-width: 1200px;
                     margin: 0 auto;
-                    padding: 80px 24px;
+                    padding: 40px 24px 80px;
                 }
 
                 .prestations-header {

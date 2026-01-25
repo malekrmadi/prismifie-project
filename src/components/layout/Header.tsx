@@ -64,14 +64,16 @@ export function Header() {
 
         .nav {
           display: flex;
-          gap: 32px;
+          gap: 48px;
         }
 
         .nav a {
-          font-size: 14px;
+          font-size: 16px;
+          font-weight: 600;
           color: #333;
           text-decoration: none;
           position: relative;
+          transition: all 0.3s ease;
         }
 
         .nav a::after {
@@ -131,7 +133,7 @@ export function Header() {
 
           {/* LOGO */}
           <a href="#" className="logo">
-            <img src="/prismifie-text-header.png" alt="Prismify" style={{ height: '80px', maxWidth: '300px', objectFit: 'contain' }} />
+            <img src="/prismifie-text-header.png" alt="prismifie" style={{ height: '80px', maxWidth: '300px', objectFit: 'contain' }} />
           </a>
 
           {/* NAV DESKTOP */}

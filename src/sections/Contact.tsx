@@ -19,19 +19,21 @@ export function Contact() {
         maxWidth: '1200px',
         margin: '0 auto',
         gap: '40px',
-        padding: '60px 20px',
+        padding: '40px 20px 60px',
         alignItems: 'center',
         justifyContent: 'space-between'
       }}>
         {/* LEFT: Form */}
         <div style={{ flex: '1 1 500px', minWidth: '300px' }}>
           <h2 style={{
-            fontSize: '2.8rem',
-            fontWeight: '700',
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '2.2rem',
+            fontWeight: '600',
             marginBottom: '30px',
-            color: '#111111'
+            color: '#111111',
+            lineHeight: '1.3'
           }}>
-            Et si on <span style={{ color: '#EC4899' }}>prismifiait</span> vos idées ?
+            Et si on <span style={{ color: '#EC4899', fontWeight: '700' }}>prismifiait</span> vos idées ?
           </h2>
 
           {status === 'success' ? (
@@ -149,9 +151,9 @@ export function Contact() {
           overflow: 'hidden',
           boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
         }}>
-          <img 
+          <img
             src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
-            alt="Prismify Collaboration"
+            alt="prismifie Collaboration"
             style={{
               width: '100%',
               height: '100%',
@@ -170,7 +172,7 @@ export function Contact() {
             background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)',
             color: 'white'
           }}>
-            <p style={{ fontSize: '0.9rem', fontWeight: '600', color: '#EC4899', marginBottom: '5px' }}>Prismify</p>
+            <p style={{ fontSize: '0.9rem', fontWeight: '600', color: '#EC4899', marginBottom: '5px' }}>prismifie</p>
             <p style={{ fontSize: '1.3rem', fontWeight: '700' }}>Illuminez votre vision</p>
           </div>
         </div>

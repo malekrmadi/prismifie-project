@@ -1,10 +1,10 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Instagram, Facebook, Youtube } from "lucide-react";
 
 export function Footer() {
-    return (
-        <>
-            {/* ===== CSS LOCAL FOOTER ===== */}
-            <style>{`
+  return (
+    <>
+      {/* ===== CSS LOCAL FOOTER ===== */}
+      <style>{`
         .footer-section {
           background: linear-gradient(180deg, #0b0b12 0%, #050508 100%);
           color: #e5e7eb;
@@ -39,6 +39,7 @@ export function Footer() {
           display: flex;
           gap: 16px;
           margin-top: 8px;
+          flex-wrap: wrap;
         }
 
         .social-icon {
@@ -51,6 +52,9 @@ export function Footer() {
           background: rgba(255, 255, 255, 0.05);
           color: #cbd5f5;
           transition: all 0.3s ease;
+          text-decoration: none;
+          font-size: 12px;
+          font-weight: 700;
         }
 
         .social-icon:hover {
@@ -97,56 +101,59 @@ export function Footer() {
         }
       `}</style>
 
-            {/* ===== FOOTER ===== */}
-            <footer className="footer-section">
-                <div className="footer-container">
+      {/* ===== FOOTER ===== */}
+      <footer className="footer-section">
+        <div className="footer-container">
 
-                    {/* Col 1: Adresse */}
-                    <div className="footer-col">
-                        <h3 className="footer-heading">Adresse</h3>
-                        <div className="footer-text">
-                            <p>123 Avenue de la Clarté</p>
-                            <p>75000 Paris, France</p>
-                        </div>
-                    </div>
+          {/* Col 1: Adresse */}
+          <div className="footer-col">
+            <h3 className="footer-heading">Adresse</h3>
+            <div className="footer-text">
+              <p>123 Avenue de la Clarté</p>
+              <p>75000 Paris, France</p>
+            </div>
+          </div>
 
-                    {/* Col 2: Contact */}
-                    <div className="footer-col">
-                        <h3 className="footer-heading">Contact</h3>
-                        <div className="footer-text">
-                            <p>hello@prismify.com</p>
-                            <p>+33 1 23 45 67 89</p>
-                        </div>
-                    </div>
+          {/* Col 2: Contact */}
+          <div className="footer-col">
+            <h3 className="footer-heading">Contact</h3>
+            <div className="footer-text">
+              <p>hello@prismifie.com</p>
+              <p>+33 1 23 45 67 89</p>
+            </div>
+          </div>
 
-                    {/* Col 3: Socials */}
-                    <div className="footer-col">
-                        <h3 className="footer-heading">Suivez-nous</h3>
-                        <div className="footer-socials">
-                            <a href="#" className="social-icon">
-                                <Twitter size={18} />
-                            </a>
-                            <a href="#" className="social-icon">
-                                <Linkedin size={18} />
-                            </a>
-                            <a href="#" className="social-icon">
-                                <Github size={18} />
-                            </a>
-                        </div>
-                    </div>
+          {/* Col 3: Socials */}
+          <div className="footer-col">
+            <h3 className="footer-heading">Suivez-nous</h3>
+            <div className="footer-socials">
+              <a href="#" className="social-icon" aria-label="Instagram">
+                <Instagram size={18} />
+              </a>
+              <a href="#" className="social-icon" aria-label="Facebook">
+                <Facebook size={18} />
+              </a>
+              <a href="#" className="social-icon" aria-label="TikTok">
+                TT
+              </a>
+              <a href="#" className="social-icon" aria-label="YouTube">
+                <Youtube size={18} />
+              </a>
+            </div>
+          </div>
 
-                    {/* Col 4: Inspiration */}
-                    <div className="footer-col">
-                        <p className="footer-inspiration">
-                            « Aidons-nous à façonner l’avenir. »
-                        </p>
-                        <p className="footer-copy">
-                            PRISMIFIE © {new Date().getFullYear()}
-                        </p>
-                    </div>
+          {/* Col 4: Inspiration */}
+          <div className="footer-col">
+            <p className="footer-inspiration">
+              « Aidons-nous à façonner l'avenir. »
+            </p>
+            <p className="footer-copy">
+              PRISMIFIE © {new Date().getFullYear()}
+            </p>
+          </div>
 
-                </div>
-            </footer>
-        </>
-    );
+        </div>
+      </footer>
+    </>
+  );
 }
