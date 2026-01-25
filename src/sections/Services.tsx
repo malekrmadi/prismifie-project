@@ -1,268 +1,215 @@
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../components/ui/SectionWrapper";
 
-const services = [
+const prestations = [
     {
-        title: "Stratégie & Consulting",
-        desc: "Nous définissons votre trajectoire. Audit, positionnement de marque et roadmap digitale pour aligner votre vision avec vos objectifs business.",
-        icon: "📊",
+        id: 1,
+        title: "Consulting Stratégique",
+        subtitle: "Diagnostic & Orientation",
+        description: "Analyse approfondie de votre écosystème pour identifier les leviers de croissance et structurer une roadmap claire.",
+        points: [
+            "Audit & diagnostic",
+            "Benchmark marché",
+            "Roadmap stratégique"
+        ],
+        image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800"
     },
     {
-        title: "Identité de Marque",
-        desc: "Nous créons votre visage. Branding, storytelling et direction artistique pour une marque qui ne passe pas inaperçue.",
-        icon: "✨",
+        id: 2,
+        title: "Stratégie & Branding",
+        subtitle: "Identité & Positionnement",
+        description: "Construction d’une identité forte et cohérente pour positionner votre marque avec justesse et impact.",
+        points: [
+            "Positionnement",
+            "Identité visuelle",
+            "Storytelling"
+        ],
+        image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&q=80&w=800"
     },
     {
-        title: "Design & Expérience",
-        desc: "Nous façonnons l'interaction. UI/UX Design, sites web immersifs et interfaces produits pensés pour l'humain.",
-        icon: "🎨",
-    },
-    {
-        title: "Développement & Tech",
-        desc: "Nous construisons le moteur. Sites performants, applications robustes et stack technique moderne pour durer.",
-        icon: "⚡",
-    },
+        id: 3,
+        title: "Présence Digitale",
+        subtitle: "Web & Visibilité",
+        description: "Création d’une présence digitale performante et alignée avec votre image de marque.",
+        points: [
+            "Site web",
+            "Contenu digital",
+            "Stratégie visibilité"
+        ],
+        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800"
+    }
 ];
 
-export function Services() {
+export function Prestations() {
     return (
-        <SectionWrapper id="services">
-            <>
-                <style>{`
-          .services-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 24px;
-          }
+        <SectionWrapper id="prestations">
+            <style>{`
+                .prestations-wrapper {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 80px 24px;
+                }
 
-          .services-header {
-            text-align: center;
-            margin-bottom: 72px;
-          }
+                .prestations-header {
+                    text-align: center;
+                    margin-bottom: 64px;
+                }
 
-          .services-label {
-            display: inline-block;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #FF5FA2;
-            margin-bottom: 16px;
-            position: relative;
-          }
+                .prestations-label {
+                    font-size: 12px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    color: #EC4899;
+                    margin-bottom: 16px;
+                }
 
-          .services-label::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 2px;
-            background: linear-gradient(90deg, #FF5FA2, #7B5CFF);
-            border-radius: 2px;
-          }
+                .prestations-title {
+                    font-size: clamp(32px, 5vw, 48px);
+                    font-weight: 800;
+                    color: #111;
+                    line-height: 1.2;
+                    margin-bottom: 16px;
+                }
 
-          .services-title {
-            font-size: clamp(32px, 5vw, 48px);
-            font-weight: 700;
-            color: #111;
-            line-height: 1.2;
-            max-width: 800px;
-            margin: 0 auto;
-          }
+                .prestations-subtitle {
+                    font-size: 17px;
+                    color: #555;
+                    max-width: 640px;
+                    margin: 0 auto;
+                }
 
-          .services-title .gradient-text {
-            background: linear-gradient(135deg, #FF5FA2, #7B5CFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-          }
+                .prestations-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 32px;
+                }
 
-          .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-          }
+                .prestation-card {
+                    background: #fff;
+                    border: 1px solid #eee;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    transition: all 0.4s ease;
+                }
 
-          .service-card {
-            position: relative;
-            background: #fff;
-            border-radius: 20px;
-            padding: 40px 32px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(123, 92, 255, 0.1);
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-          }
+                .prestation-card:hover {
+                    transform: translateY(-6px);
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+                }
 
-          .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255, 95, 162, 0.08), rgba(123, 92, 255, 0.08));
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            pointer-events: none;
-          }
+                .prestation-image-wrapper {
+                    height: 200px;
+                    overflow: hidden;
+                }
 
-          .service-card:hover::before {
-            opacity: 1;
-          }
+                .prestation-image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.6s ease;
+                }
 
-          .service-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 0;
-            background: linear-gradient(180deg, #FF5FA2, #7B5CFF);
-            transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          }
+                .prestation-card:hover .prestation-image {
+                    transform: scale(1.05);
+                }
 
-          .service-card:hover::after {
-            height: 100%;
-          }
+                .prestation-content {
+                    padding: 24px;
+                }
 
-          .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(255, 95, 162, 0.2);
-            border-color: rgba(255, 95, 162, 0.3);
-          }
+                .prestation-subtitle-text {
+                    font-size: 11px;
+                    font-weight: 700;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    color: #EC4899;
+                    margin-bottom: 6px;
+                }
 
-          .service-icon {
-            font-size: 48px;
-            margin-bottom: 24px;
-            display: inline-block;
-            filter: grayscale(0.3);
-            transition: all 0.4s ease;
-          }
+                .prestation-title {
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: #111;
+                    margin-bottom: 12px;
+                }
 
-          .service-card:hover .service-icon {
-            filter: grayscale(0);
-            transform: scale(1.1) rotate(5deg);
-          }
+                .prestation-description {
+                    font-size: 15px;
+                    color: #555;
+                    line-height: 1.6;
+                    margin-bottom: 16px;
+                }
 
-          .service-title {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: #111;
-            transition: color 0.3s ease;
-            position: relative;
-            z-index: 1;
-          }
+                .prestation-points {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                }
 
-          .service-card:hover .service-title {
-            color: #FF5FA2;
-          }
+                .prestation-point {
+                    font-size: 14px;
+                    color: #666;
+                    position: relative;
+                    padding-left: 18px;
+                }
 
-          .service-desc {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #CBD5F5;
-            position: relative;
-            z-index: 1;
-          }
+                .prestation-point::before {
+                    content: "•";
+                    position: absolute;
+                    left: 0;
+                    color: #EC4899;
+                    font-size: 18px;
+                    line-height: 1;
+                }
+            `}</style>
 
-          .service-card:hover .service-desc {
-            color: #555;
-          }
+            <div className="prestations-wrapper">
+                {/* Header */}
+                <motion.div
+                    className="prestations-header"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <div className="prestations-label">Nos prestations</div>
+                    <h2 className="prestations-title">
+                        Trois piliers pour structurer votre croissance
+                    </h2>
+                    <p className="prestations-subtitle">
+                        Stratégie, identité et présence digitale : nous clarifions votre vision et la transformons en actions concrètes.
+                    </p>
+                </motion.div>
 
-          .service-arrow {
-            position: absolute;
-            bottom: 24px;
-            right: 24px;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #FF5FA2, #7B5CFF);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transform: translate(10px, 10px);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-
-          .service-card:hover .service-arrow {
-            opacity: 1;
-            transform: translate(0, 0);
-          }
-
-          .service-arrow::after {
-            content: '→';
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-          }
-
-          @media (max-width: 768px) {
-            .services-container {
-              padding: 60px 20px;
-            }
-
-            .services-header {
-              margin-bottom: 48px;
-            }
-
-            .services-grid {
-              gap: 24px;
-            }
-
-            .service-card {
-              padding: 32px 24px;
-            }
-
-            .service-icon {
-              font-size: 40px;
-            }
-          }
-        `}</style>
-
-                <div className="services-container">
-                    <div className="services-header">
+                {/* Cards */}
+                <div className="prestations-grid">
+                    {prestations.map((p, index) => (
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
+                            key={p.id}
+                            className="prestation-card"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.15 }}
                         >
-                            <span className="services-label">Nos Services</span>
-                            <h2 className="services-title">
-                                Notre expertise au service de votre{" "}
-                                <span className="gradient-text">croissance</span>
-                            </h2>
+                            <div className="prestation-image-wrapper">
+                                <img src={p.image} alt={p.title} className="prestation-image" />
+                            </div>
+                            <div className="prestation-content">
+                                <div className="prestation-subtitle-text">{p.subtitle}</div>
+                                <h3 className="prestation-title">{p.title}</h3>
+                                <p className="prestation-description">{p.description}</p>
+                                <div className="prestation-points">
+                                    {p.points.map((point, i) => (
+                                        <div key={i} className="prestation-point">{point}</div>
+                                    ))}
+                                </div>
+                            </div>
                         </motion.div>
-                    </div>
-
-                    <div className="services-grid">
-                        {services.map((service, index) => (
-                            <motion.div
-                                key={index}
-                                className="service-card"
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                transition={{
-                                    duration: 0.6,
-                                    delay: index * 0.1,
-                                    ease: [0.4, 0, 0.2, 1]
-                                }}
-                            >
-                                <div className="service-icon">{service.icon}</div>
-                                <h3 className="service-title">{service.title}</h3>
-                                <p className="service-desc">{service.desc}</p>
-                                <div className="service-arrow"></div>
-                            </motion.div>
-                        ))}
-                    </div>
+                    ))}
                 </div>
-            </>
+            </div>
         </SectionWrapper>
     );
 }
