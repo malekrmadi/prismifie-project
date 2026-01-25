@@ -1,70 +1,180 @@
 import { useState } from "react";
 import { SectionWrapper } from "../components/ui/SectionWrapper";
-import { Button } from "../components/ui/Button";
 
 export function Contact() {
-    const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setStatus('submitting');
-        // Simulate submission
-        setTimeout(() => {
-            setStatus('success');
-        }, 1500);
-    };
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('submitting');
+    setTimeout(() => setStatus('success'), 1500);
+  };
 
-    return (
-        <SectionWrapper id="contact">
-            <div className="contact-layout">
-                {/* Left: Form */}
-                <div className="contact-form-panel">
-                    <h2 className="contact-title">
-                        Prêt à faire briller votre vision ?
-                    </h2>
-                    <p className="contact-text">
-                        Ensemble, construisons l'avenir de votre marque. Remplissez ce formulaire et commençons la discussion.
-                    </p>
+  return (
+    <SectionWrapper id="contact">
+      <div style={{
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        maxWidth: '1200px',
+        margin: '0 auto',
+        gap: '40px',
+        padding: '60px 20px',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      }}>
+        {/* LEFT: Form */}
+        <div style={{ flex: '1 1 500px', minWidth: '300px' }}>
+          <h2 style={{
+            fontSize: '2.8rem',
+            fontWeight: '700',
+            marginBottom: '30px',
+            color: '#111111'
+          }}>
+            Et si on <span style={{ color: '#EC4899' }}>prismifiait</span> vos idées ?
+          </h2>
 
-                    {status === 'success' ? (
-                        <div className="contact-success-box">
-                            <div className="contact-check-icon">✓</div>
-                            <h3 className="text-2xl font-bold mb-2">Message reçu !</h3>
-                            <p className="text-foreground opacity-60">Nous vous recontacterons très vite.</p>
-                            <button onClick={() => setStatus('idle')} className="mt-8 text-primary underline">Envoyer un autre message</button>
-                        </div>
-                    ) : (
-                        <form onSubmit={handleSubmit} className="contact-form-space">
-                            <div>
-                                <label htmlFor="name" className="contact-label">Nom</label>
-                                <input required id="name" type="text" className="contact-input" placeholder="Votre nom" />
-                            </div>
-                            <div>
-                                <label htmlFor="email" className="contact-label">Email</label>
-                                <input required id="email" type="email" className="contact-input" placeholder="votre@email.com" />
-                            </div>
-                            <div>
-                                <label htmlFor="message" className="contact-label">Message</label>
-                                <textarea required id="message" rows={4} className="contact-input contact-textarea" placeholder="Parlez-nous de votre projet..." />
-                            </div>
-                            <Button disabled={status === 'submitting'} type="submit" className="contact-submit-btn">
-                                {status === 'submitting' ? 'Envoi...' : 'Envoyer le message'}
-                            </Button>
-                        </form>
-                    )}
-                </div>
-
-                {/* Right: Visual/Animation */}
-                <div className="contact-visual">
-                    {/* Abstract Modern Shape Animation */}
-                    <div className="absolute w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-                    <div className="relative z-10 glass-panel p-8 rounded-2xl border border-white/20">
-                        <div className="text-center font-display font-bold text-2xl text-foreground">
-                            Prismify<span className="text-primary">.</span>
-                        </div>
-                    </div>
-                </div>
+          {status === 'success' ? (
+            <div style={{
+              backgroundColor: '#FEE2E2',
+              border: '1px solid #FECACA',
+              padding: '25px',
+              borderRadius: '15px',
+              textAlign: 'center'
+            }}>
+              <div style={{
+                width: '50px',
+                height: '50px',
+                margin: '0 auto 15px',
+                borderRadius: '50%',
+                backgroundColor: '#EC4899',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontWeight: '700',
+                fontSize: '1.2rem'
+              }}>
+                ✓
+              </div>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#111111', marginBottom: '10px' }}>
+                Message envoyé !
+              </h3>
+              <p style={{ color: '#555555' }}>
+                Merci, nous vous recontacterons très prochainement.
+              </p>
+              <button onClick={() => setStatus('idle')} style={{
+                marginTop: '20px',
+                background: 'none',
+                border: 'none',
+                color: '#EC4899',
+                fontWeight: '600',
+                cursor: 'pointer',
+                textDecoration: 'underline'
+              }}>
+                Envoyer un autre message
+              </button>
             </div>
-        </SectionWrapper>
-    );
+          ) : (
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              {/* Ligne 1: Nom et Prénom */}
+              <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+                <input type="text" required placeholder="Nom" style={{
+                  flex: 1,
+                  padding: '15px',
+                  borderRadius: '10px',
+                  border: '1px solid #DDD',
+                  fontSize: '1rem'
+                }} />
+                <input type="text" required placeholder="Prénom" style={{
+                  flex: 1,
+                  padding: '15px',
+                  borderRadius: '10px',
+                  border: '1px solid #DDD',
+                  fontSize: '1rem'
+                }} />
+              </div>
+
+              {/* Ligne 2: Email et Sujet */}
+              <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+                <input type="email" required placeholder="Email" style={{
+                  flex: 1,
+                  padding: '15px',
+                  borderRadius: '10px',
+                  border: '1px solid #DDD',
+                  fontSize: '1rem'
+                }} />
+                <input type="text" placeholder="Sujet" style={{
+                  flex: 1,
+                  padding: '15px',
+                  borderRadius: '10px',
+                  border: '1px solid #DDD',
+                  fontSize: '1rem'
+                }} />
+              </div>
+
+              {/* Ligne 3: Message */}
+              <textarea required rows={5} placeholder="Votre message..." style={{
+                width: '100%',
+                padding: '15px',
+                borderRadius: '10px',
+                border: '1px solid #DDD',
+                fontSize: '1rem',
+                resize: 'none'
+              }} />
+
+              {/* Bouton d'envoi */}
+              <button type="submit" disabled={status === 'submitting'} style={{
+                backgroundColor: '#EC4899',
+                color: 'white',
+                padding: '15px',
+                fontSize: '1rem',
+                fontWeight: '700',
+                borderRadius: '10px',
+                border: 'none',
+                cursor: 'pointer'
+              }}>
+                {status === 'submitting' ? 'Envoi en cours...' : 'Envoyer le message'}
+              </button>
+            </form>
+          )}
+        </div>
+
+        {/* RIGHT: Image */}
+        <div style={{
+          flex: '1 1 400px',
+          minWidth: '300px',
+          position: 'relative',
+          borderRadius: '20px',
+          overflow: 'hidden',
+          boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
+        }}>
+          <img 
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
+            alt="Prismify Collaboration"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              transition: 'transform 0.6s ease-in-out'
+            }}
+            onMouseOver={e => (e.currentTarget.style.transform = 'scale(1.05)')}
+            onMouseOut={e => (e.currentTarget.style.transform = 'scale(1)')}
+          />
+          <div style={{
+            position: 'absolute',
+            bottom: '0',
+            left: '0',
+            right: '0',
+            padding: '20px',
+            background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)',
+            color: 'white'
+          }}>
+            <p style={{ fontSize: '0.9rem', fontWeight: '600', color: '#EC4899', marginBottom: '5px' }}>Prismify</p>
+            <p style={{ fontSize: '1.3rem', fontWeight: '700' }}>Illuminez votre vision</p>
+          </div>
+        </div>
+      </div>
+    </SectionWrapper>
+  );
 }
