@@ -4,27 +4,27 @@ import { Menu, X } from "lucide-react";
 import { Button } from "../ui/Button";
 
 const navLinks = [
-    { name: "Concept", href: "#concept" },
-    { name: "À propos", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Expertise", href: "#expertise" },
-    { name: "Contact", href: "#contact" },
+  { name: "Concept", href: "#concept" },
+  { name: "À propos", href: "#about" },
+  { name: "Services", href: "#services" },
+  { name: "Expertise", href: "#expertise" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export function Header() {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    useEffect(() => {
-        const onScroll = () => setIsScrolled(window.scrollY > 20);
-        window.addEventListener("scroll", onScroll);
-        return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-    return (
-        <>
-            {/* ===== CSS LOCAL AU HEADER ===== */}
-            <style>{`
+  return (
+    <>
+      {/* ===== CSS LOCAL AU HEADER ===== */}
+      <style>{`
         .header {
           position: fixed;
           top: 0;
@@ -125,83 +125,83 @@ export function Header() {
         }
       `}</style>
 
-            {/* ===== HEADER ===== */}
-            <header className={`header ${isScrolled ? "scrolled" : "transparent"}`}>
-                <div className="header-container">
+      {/* ===== HEADER ===== */}
+      <header className={`header ${isScrolled ? "scrolled" : "transparent"}`}>
+        <div className="header-container">
 
-                    {/* LOGO */}
-                    <a href="#" className="logo">
-                        <img src="/public/prismifie-text-header.png" alt="Prismify" style={{ height: '80px', maxWidth: '300px', objectFit: 'contain' }} />
-                    </a>
+          {/* LOGO */}
+          <a href="#" className="logo">
+            <img src="/prismifie-text-header.png" alt="Prismify" style={{ height: '80px', maxWidth: '300px', objectFit: 'contain' }} />
+          </a>
 
-                    {/* NAV DESKTOP */}
-                    <nav className="nav">
-                        {navLinks.map(link => (
-                            <a key={link.name} href={link.href}>
-                                {link.name}
-                            </a>
-                        ))}
-                    </nav>
+          {/* NAV DESKTOP */}
+          <nav className="nav">
+            {navLinks.map(link => (
+              <a key={link.name} href={link.href}>
+                {link.name}
+              </a>
+            ))}
+          </nav>
 
-                    {/* CTA */}
-                    <div className="cta">
-                        <Button
-                            onClick={() =>
-                                document
-                                    .getElementById("contact")
-                                    ?.scrollIntoView({ behavior: "smooth" })
-                            }
-                        >
-                            Démarrer un projet
-                        </Button>
-                    </div>
+          {/* CTA */}
+          <div className="cta">
+            <Button
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Démarrer un projet
+            </Button>
+          </div>
 
-                    {/* MOBILE TOGGLE */}
-                    <button
-                        className="mobile-toggle"
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    >
-                        {isMobileMenuOpen ? <X /> : <Menu />}
-                    </button>
-                </div>
+          {/* MOBILE TOGGLE */}
+          <button
+            className="mobile-toggle"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
 
-                {/* MOBILE MENU */}
-                <AnimatePresence>
-                    {isMobileMenuOpen && (
-                        <motion.div
-                            className="mobile-menu"
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                        >
-                            {navLinks.map(link => (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                    {link.name}
-                                </a>
-                            ))}
-                            <Button
-                                onClick={() => {
-                                    setIsMobileMenuOpen(false);
-                                    document
-                                        .getElementById("contact")
-                                        ?.scrollIntoView({ behavior: "smooth" });
-                                }}
-                            >
-                                Démarrer un projet
-                            </Button>
+        {/* MOBILE MENU */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              className="mobile-menu"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+            >
+              {navLinks.map(link => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
+              <Button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Démarrer un projet
+              </Button>
 
-                            {/* Signature */}
-                            <div style={{ marginTop: 24, fontSize: 12, opacity: 0.5 }}>
-                                PRISMIFI
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </header>
-        </>
-    );
+              {/* Signature */}
+              <div style={{ marginTop: 24, fontSize: 12, opacity: 0.5 }}>
+                PRISMIFI
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </header>
+    </>
+  );
 }

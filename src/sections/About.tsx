@@ -1,21 +1,21 @@
 import { motion } from "framer-motion";
 
 export function About() {
-    return (
-        <section
-            id="about"
-            style={{
-                background: "url(/public/prismifie-backgound_light.png) center/cover no-repeat",
-                minHeight: "100vh",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                padding: "60px 24px",
-                position: "relative",
-            }}
-        >
-            {/* ===== CSS LOCAL ===== */}
-            <style>{`
+  return (
+    <section
+      id="about"
+      style={{
+        background: "url(/prismifie-backgound_light.png) center/cover no-repeat",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        padding: "60px 24px",
+        position: "relative",
+      }}
+    >
+      {/* ===== CSS LOCAL ===== */}
+      <style>{`
         .about-title {
           font-family: 'Hicloser', sans-serif;
           font-size: 52px;
@@ -99,53 +99,53 @@ export function About() {
         }
       `}</style>
 
-            {/* TOP TITLE */}
-            <motion.h2
-                initial={{ opacity: 0, y: -40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-                className="about-title"
-            >
-                Transformer vos idées en un <br />
-                spectre de possibilités
-            </motion.h2>
+      {/* TOP TITLE */}
+      <motion.h2
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        className="about-title"
+      >
+        Transformer vos idées en un <br />
+        spectre de possibilités
+      </motion.h2>
 
-            {/* BOTTOM CONTAINER */}
-            <div className="about-container-bottom">
-                {/* TRANSFORMATION LINE */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, delay: 0.3 }}
-                    className="transformation-line"
-                >
-                    <motion.div whileHover={{ scale: 1.05 }} className="step-card">
-                        Idées<br />floues
-                    </motion.div>
+      {/* BOTTOM CONTAINER */}
+      <div className="about-container-bottom">
+        {/* TRANSFORMATION LINE */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="transformation-line"
+        >
+          <motion.div whileHover={{ scale: 1.05 }} className="step-card">
+            Idées<br />floues
+          </motion.div>
 
-                    <span className="step-arrow">→</span>
+          <span className="step-arrow">→</span>
 
-                    <motion.div whileHover={{ scale: 1.05 }} className="step-card">
-                        Effets<br />prismifiés
-                    </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} className="step-card">
+            Effets<br />prismifiés
+          </motion.div>
 
-                    <span className="step-arrow">→</span>
+          <span className="step-arrow">→</span>
 
-                    <motion.div whileHover={{ scale: 1.05 }} className="step-card">
-                        Spectre<br />clair
-                    </motion.div>
-                </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} className="step-card">
+            Spectre<br />clair
+          </motion.div>
+        </motion.div>
 
-                {/* BOTTOM TEXT */}
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, delay: 0.6 }}
-                    className="about-text"
-                >
-                    Chez Prismify, nous transformons chaque message en un spectre de possibilités révélant toute la palette de votre communication.
-                </motion.p>
-            </div>
-        </section>
-    );
+        {/* BOTTOM TEXT */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="about-text"
+        >
+          Chez Prismify, nous transformons chaque message en un spectre de possibilités révélant toute la palette de votre communication.
+        </motion.p>
+      </div>
+    </section>
+  );
 }
