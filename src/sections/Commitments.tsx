@@ -88,7 +88,7 @@ export function Commitments() {
         }
       `}</style>
 
-      <h2 className="commitments-title">Nos valeurs</h2>
+      <h2 className="commitments-title">Notre engagement en trois C</h2>
 
       <motion.div
         className="commitments-grid"

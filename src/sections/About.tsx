@@ -5,79 +5,49 @@ export function About() {
     <section
       id="about"
       style={{
-        background: "url(/prismifie-backgound_light.png) center/cover no-repeat",
-        minHeight: "100vh",
+        backgroundImage: "url(/prism.png)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "70vh",
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        alignItems: "center",
+        alignItems: "flex-start",
+        justifyContent: "center",
         padding: "100px 24px",
         position: "relative",
       }}
     >
       {/* ===== CSS LOCAL ===== */}
       <style>{`
-        .about-title {
+        .about-new-title {
           font-family: 'Space Grotesk', sans-serif;
-          font-size: clamp(40px, 6vw, 58px);
-          font-weight: 800;
-          color: #fff;
+          font-size: clamp(40px, 6vw, 64px);
+          font-weight: 700;
+          color: #FFFFFF;
           text-align: center;
-          line-height: 1.15;
-          text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+          line-height: 1.2;
+          text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
           max-width: 900px;
-        }
-
-        .about-text {
-          font-family: 'Inter', sans-serif;
-          font-size: clamp(20px, 3vw, 26px);
-          font-weight: 600;
-          color: #fff;
-          text-align: center;
-          max-width: 850px;
-          line-height: 1.6;
-          text-shadow: 0 2px 15px rgba(0,0,0,0.25);
-          padding: 0 20px;
-          transition: all 0.4s ease;
-        }
-
-        .about-text:hover {
-          transform: scale(1.02);
-          text-shadow: 0 4px 25px rgba(255,255,255,0.3);
+          margin: 0 auto;
         }
 
         @media (max-width: 768px) {
-          .about-title {
-            font-size: 36px;
-          }
-          .about-text {
-            font-size: 20px;
+          .about-new-title {
+            font-size: clamp(32px, 8vw, 48px);
           }
         }
       `}</style>
 
-      {/* TITLE - TOP */}
+      {/* TITLE */}
       <motion.h2
-        initial={{ opacity: 0, y: -40 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="about-title"
+        className="about-new-title"
       >
-        Transformer vos idées en un <br />
-        spectre de possibilités
+        Quand vos idées prennent lumière
       </motion.h2>
-
-      {/* TEXT - BOTTOM */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1, delay: 0.3 }}
-        className="about-text"
-      >
-        Chez prismifie, nous transformons chaque message en un spectre de possibilités révélant toute la palette de votre communication.
-      </motion.p>
     </section>
   );
 }

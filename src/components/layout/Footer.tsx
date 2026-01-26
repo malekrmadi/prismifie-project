@@ -148,8 +148,8 @@ export function Footer() {
             <h3 className="footer-heading">À propos</h3>
             <div className="footer-text">
               <p>prismifie transforme vos idées en stratégies claires et impactantes.</p>
-              <p style={{ marginTop: '16px' }}>123 Avenue de la Clarté</p>
-              <p>75000 Paris, France</p>
+              <p style={{ marginTop: '16px' }}>23 rue de la Bièvre</p>
+              <p>92340 Bourg-la-Reine</p>
             </div>
           </div>
 
