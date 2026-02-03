@@ -1,13 +1,59 @@
 import { useState } from "react";
 import { SectionWrapper } from "../components/ui/SectionWrapper";
 
+const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzN4l1HWhfbUc7lMEVUkHefcEuXsHDyE22YJayPCxHa1ORCs9jGUFa0M0_tZS0OwAhK/exec";
+const API_KEY = "CONTACT_FORM_2025";
+
 export function Contact() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [formData, setFormData] = useState({
+    nom: '',
+    prenom: '',
+    email: '',
+    sujet: '',
+    message: ''
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
-    setTimeout(() => setStatus('success'), 1500);
+
+    const payload = {
+      api_key: API_KEY,
+      nom: formData.nom,
+      prenom: formData.prenom,
+      email: formData.email,
+      sujet: formData.sujet,
+      message: formData.message
+    };
+
+    try {
+      await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      setStatus('success');
+      setFormData({
+        nom: '',
+        prenom: '',
+        email: '',
+        sujet: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error(error);
+      setStatus('idle');
+    }
   };
 
   return (
@@ -23,7 +69,8 @@ export function Contact() {
         alignItems: 'center',
         justifyContent: 'space-between'
       }}>
-        {/* LEFT: Form */}
+
+        {/* LEFT */}
         <div style={{ flex: '1 1 500px', minWidth: '300px' }}>
           <h2 style={{
             fontFamily: 'Inter, sans-serif',
@@ -79,53 +126,25 @@ export function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              {/* Ligne 1: Nom et Prénom */}
+
               <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
-                <input type="text" required placeholder="Nom" style={{
-                  flex: 1,
-                  padding: '15px',
-                  borderRadius: '10px',
-                  border: '1px solid #DDD',
-                  fontSize: '1rem'
-                }} />
-                <input type="text" required placeholder="Prénom" style={{
-                  flex: 1,
-                  padding: '15px',
-                  borderRadius: '10px',
-                  border: '1px solid #DDD',
-                  fontSize: '1rem'
-                }} />
+                <input name="nom" required placeholder="Nom" value={formData.nom} onChange={handleChange}
+                  style={{ flex: 1, padding: '15px', borderRadius: '10px', border: '1px solid #DDD' }} />
+                <input name="prenom" required placeholder="Prénom" value={formData.prenom} onChange={handleChange}
+                  style={{ flex: 1, padding: '15px', borderRadius: '10px', border: '1px solid #DDD' }} />
               </div>
 
-              {/* Ligne 2: Email et Sujet */}
               <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
-                <input type="email" required placeholder="Email" style={{
-                  flex: 1,
-                  padding: '15px',
-                  borderRadius: '10px',
-                  border: '1px solid #DDD',
-                  fontSize: '1rem'
-                }} />
-                <input type="text" placeholder="Sujet" style={{
-                  flex: 1,
-                  padding: '15px',
-                  borderRadius: '10px',
-                  border: '1px solid #DDD',
-                  fontSize: '1rem'
-                }} />
+                <input type="email" name="email" required placeholder="Email" value={formData.email} onChange={handleChange}
+                  style={{ flex: 1, padding: '15px', borderRadius: '10px', border: '1px solid #DDD' }} />
+                <input name="sujet" placeholder="Sujet" value={formData.sujet} onChange={handleChange}
+                  style={{ flex: 1, padding: '15px', borderRadius: '10px', border: '1px solid #DDD' }} />
               </div>
 
-              {/* Ligne 3: Message */}
-              <textarea required rows={5} placeholder="Votre message..." style={{
-                width: '100%',
-                padding: '15px',
-                borderRadius: '10px',
-                border: '1px solid #DDD',
-                fontSize: '1rem',
-                resize: 'none'
-              }} />
+              <textarea name="message" required rows={5} placeholder="Votre message..."
+                value={formData.message} onChange={handleChange}
+                style={{ padding: '15px', borderRadius: '10px', border: '1px solid #DDD', resize: 'none' }} />
 
-              {/* Bouton d'envoi */}
               <button type="submit" disabled={status === 'submitting'} style={{
                 backgroundColor: '#EC4899',
                 color: 'white',
@@ -138,11 +157,12 @@ export function Contact() {
               }}>
                 {status === 'submitting' ? 'Envoi en cours...' : 'Envoyer le message'}
               </button>
+
             </form>
           )}
         </div>
 
-        {/* RIGHT: Image */}
+        {/* RIGHT IMAGE */}
         <div style={{
           flex: '1 1 400px',
           minWidth: '300px',
@@ -154,28 +174,10 @@ export function Contact() {
           <img
             src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
             alt="prismifie Collaboration"
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              transition: 'transform 0.6s ease-in-out'
-            }}
-            onMouseOver={e => (e.currentTarget.style.transform = 'scale(1.05)')}
-            onMouseOut={e => (e.currentTarget.style.transform = 'scale(1)')}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
-          <div style={{
-            position: 'absolute',
-            bottom: '0',
-            left: '0',
-            right: '0',
-            padding: '20px',
-            background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)',
-            color: 'white'
-          }}>
-            <p style={{ fontSize: '0.9rem', fontWeight: '600', color: '#EC4899', marginBottom: '5px' }}>prismifie</p>
-            <p style={{ fontSize: '1.3rem', fontWeight: '700' }}>Illuminez votre vision</p>
-          </div>
         </div>
+
       </div>
     </SectionWrapper>
   );
