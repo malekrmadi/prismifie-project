@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SectionWrapper } from "../components/ui/SectionWrapper";
 
-const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzN4l1HWhfbUc7lMEVUkHefcEuXsHDyE22YJayPCxHa1ORCs9jGUFa0M0_tZS0OwAhK/exec";
+const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwchCyPcashBdNBJ8TxD-MTNBVbagrId39nMvs_3ChJpRqQwA2RojrDrtpFbDc9qMtk/exec";
 const API_KEY = "CONTACT_FORM_2025";
 
 export function Contact() {
