@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Youtube } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -148,8 +148,8 @@ export function Footer() {
             <h3 className="footer-heading">À propos</h3>
             <div className="footer-text">
               <p>prismifie transforme vos idées en stratégies claires et impactantes.</p>
-              <p style={{ marginTop: '16px' }}>23 rue de la Bièvre</p>
-              <p>92340 Bourg-la-Reine</p>
+              <p style={{ marginTop: '16px' }}>52 rue Carves</p>
+              <p>92120 Montrouge</p>
             </div>
           </div>
 
@@ -167,22 +167,19 @@ export function Footer() {
           <div className="footer-col">
             <h3 className="footer-heading">Contact</h3>
             <div className="footer-text">
-              <p>hello@prismifie.com</p>
-              <p>+33 1 23 45 67 89</p>
+              <p>Marketing@prismifie.fr</p>
+              <p>01 82 83 15 14</p>
             </div>
             <h3 className="footer-heading" style={{ marginTop: '24px' }}>Suivez-nous</h3>
             <div className="footer-socials">
-              <a href="#" className="social-icon" aria-label="Instagram">
+              <a href="https://www.instagram.com/prismifie_?igsh=bmczazhsdzgyN3lo&utm_source=qr" className="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                 <Instagram size={18} />
               </a>
-              <a href="#" className="social-icon" aria-label="Facebook">
-                <Facebook size={18} />
-              </a>
-              <a href="#" className="social-icon" aria-label="TikTok">
+              <a href="https://www.tiktok.com/@prismifie.consult" className="social-icon" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
                 TT
               </a>
-              <a href="#" className="social-icon" aria-label="YouTube">
-                <Youtube size={18} />
+              <a href="https://www.linkedin.com/company/110417500/admin/dashboard/" className="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <Linkedin size={18} />
               </a>
             </div>
           </div>
