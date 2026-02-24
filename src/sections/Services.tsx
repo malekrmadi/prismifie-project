@@ -42,7 +42,7 @@ const prestations = [
 
 export function Prestations() {
     return (
-        <SectionWrapper id="prestations">
+        <SectionWrapper id="services">
             <style>{`
                 .prestations-wrapper {
                     max-width: 1200px;
