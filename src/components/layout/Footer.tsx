@@ -1,9 +1,9 @@
 import { Instagram, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
     <>
-      {/* ===== CSS LOCAL FOOTER ===== */}
       <style>{`
         .footer-section {
           background: linear-gradient(180deg, #0b0b12 0%, #050508 100%);
@@ -12,7 +12,7 @@ export function Footer() {
         }
 
         .footer-container {
-          max-width: 1200px;
+          max-width: 1280px;
           margin: 0 auto;
           display: grid;
           grid-template-columns: repeat(4, 1fr);
@@ -21,38 +21,51 @@ export function Footer() {
         }
 
         .footer-heading {
-          font-size: 14px;
-          font-weight: 600;
-          letter-spacing: 1px;
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 1.5px;
           text-transform: uppercase;
           color: #ff5fa2;
-          margin-bottom: 16px;
+          margin-bottom: 18px;
         }
 
         .footer-text p {
           font-size: 14px;
           line-height: 1.8;
-          color: #cbd5f5;
-          margin: 0 0 8px 0;
+          color: #94a3c8;
+          margin: 0 0 6px 0;
         }
 
         .footer-link {
           display: block;
           font-size: 14px;
           line-height: 1.8;
-          color: #cbd5f5;
+          color: #94a3c8;
           text-decoration: none;
-          margin-bottom: 8px;
-          transition: color 0.3s ease;
+          margin-bottom: 10px;
+          transition: color 0.2s ease;
         }
 
         .footer-link:hover {
           color: #ff5fa2;
         }
 
+        .footer-tag {
+          display: inline-block;
+          font-size: 11px;
+          font-weight: 600;
+          padding: 2px 8px;
+          border-radius: 20px;
+          background: rgba(255, 95, 162, 0.15);
+          color: #ff5fa2;
+          margin-bottom: 12px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
         .footer-socials {
           display: flex;
-          gap: 16px;
+          gap: 12px;
           margin-top: 8px;
           flex-wrap: wrap;
         }
@@ -64,18 +77,21 @@ export function Footer() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: rgba(255, 255, 255, 0.05);
-          color: #cbd5f5;
+          background: rgba(255, 255, 255, 0.06);
+          color: #94a3c8;
           transition: all 0.3s ease;
           text-decoration: none;
           font-size: 12px;
           font-weight: 700;
+          border: 1px solid rgba(255,255,255,0.06);
         }
 
         .social-icon:hover {
-          background: linear-gradient(135deg, #ff5fa2, #7b5cff);
+          background: linear-gradient(135deg, #ff5fa2, #f97316);
           color: white;
-          transform: translateY(-2px);
+          border-color: transparent;
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(255, 95, 162, 0.3);
         }
 
         .footer-logo-container {
@@ -85,25 +101,57 @@ export function Footer() {
         }
 
         .footer-logo-img {
-          max-width: 80px;
+          max-width: 70px;
           height: auto;
           margin-bottom: 16px;
-          opacity: 0.9;
+          opacity: 0.85;
         }
 
         .footer-inspiration {
-          font-size: 15px;
+          font-size: 14px;
           font-weight: 300;
-          line-height: 1.6;
-          color: #f1f5f9;
-          margin-bottom: 12px;
+          line-height: 1.7;
+          color: #cbd5e6;
+          margin-bottom: 10px;
+        }
+
+        .footer-divider {
+          width: 100%;
+          height: 1px;
+          background: rgba(255,255,255,0.06);
+          margin: 40px 0 24px;
+        }
+
+        .footer-bottom {
+          max-width: 1280px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 12px;
         }
 
         .footer-copy {
-          margin-top: 16px;
-          font-size: 12px;
-          color: #94a3b8;
-          letter-spacing: 1px;
+          font-size: 13px;
+          color: #4b5563;
+          letter-spacing: 0.5px;
+        }
+
+        .footer-bottom-links {
+          display: flex;
+          gap: 24px;
+        }
+
+        .footer-bottom-link {
+          font-size: 13px;
+          color: #4b5563;
+          text-decoration: none;
+          transition: color 0.2s;
+        }
+
+        .footer-bottom-link:hover {
+          color: #ff5fa2;
         }
 
         /* Responsive */
@@ -127,79 +175,87 @@ export function Footer() {
             align-items: center;
           }
 
-          .footer-inspiration {
-            text-align: center;
-          }
-
           .footer-logo-img {
             margin-left: auto;
             margin-right: auto;
             display: block;
           }
+
+          .footer-bottom {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
         }
       `}</style>
 
-      {/* ===== FOOTER ===== */}
       <footer className="footer-section">
         <div className="footer-container">
 
-          {/* Col 1: À propos */}
-          <div className="footer-col">
-            <h3 className="footer-heading">À propos</h3>
-            <div className="footer-text">
-              <p>prismifie transforme vos idées en stratégies claires et impactantes.</p>
-              <p style={{ marginTop: '16px' }}>52 rue Carves</p>
-              <p>92120 Montrouge</p>
+          {/* Col 1: Agence */}
+          <div>
+            <div className="footer-logo-container">
+              <img src="/logo.png" alt="Prismifie" className="footer-logo-img" />
+              <p className="footer-inspiration">
+                « Aidons-nous à façonner l'avenir. »
+              </p>
+              <p className="footer-inspiration" style={{ fontSize: '13px', opacity: '0.7' }}>
+                Clarté · Créativité · Confiance
+              </p>
             </div>
           </div>
 
-          {/* Col 2: Liens rapides */}
-          <div className="footer-col">
-            <h3 className="footer-heading">Liens rapides</h3>
-            <a href="#concept" className="footer-link">Concept</a>
-            <a href="#about" className="footer-link">À propos</a>
-            <a href="#prestations" className="footer-link">Services</a>
-            <a href="#faq" className="footer-link">FAQ</a>
-            <a href="#contact" className="footer-link">Contact</a>
+          {/* Col 2: Navigation */}
+          <div>
+            <h3 className="footer-heading">Navigation</h3>
+            <Link to="/" className="footer-link">Accueil</Link>
+            <Link to="/expertises" className="footer-link">Expertises</Link>
+            <Link to="/offres" className="footer-link">Nos offres</Link>
+            <Link to="/realisations" className="footer-link">Réalisations</Link>
+            <Link to="/a-propos" className="footer-link">À propos</Link>
+            <Link to="/contact" className="footer-link">Contact</Link>
           </div>
 
-          {/* Col 3: Contact & Socials */}
-          <div className="footer-col">
+          {/* Col 3: Expertises */}
+          <div>
+            <h3 className="footer-heading">Expertises</h3>
+            <Link to="/event" className="footer-link">🎭 Événementiel</Link>
+            <Link to="/conseil" className="footer-link">🎯 Conseil stratégique</Link>
+            <Link to="/marketing" className="footer-link">📣 Marketing & Communication</Link>
+          </div>
+
+          {/* Col 4: Contact */}
+          <div>
             <h3 className="footer-heading">Contact</h3>
             <div className="footer-text">
               <p>Marketing@prismifie.fr</p>
               <p>01 82 83 15 14</p>
+              <p style={{ marginTop: '12px' }}>52 rue Carves</p>
+              <p>92120 Montrouge</p>
             </div>
             <h3 className="footer-heading" style={{ marginTop: '24px' }}>Suivez-nous</h3>
             <div className="footer-socials">
               <a href="https://www.instagram.com/prismifie_?igsh=bmczazhsdzgyN3lo&utm_source=qr" className="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                <Instagram size={18} />
+                <Instagram size={17} />
               </a>
-              <a href="https://www.tiktok.com/@prismifie.consult" className="social-icon" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.tiktok.com/@prismifie.consult" className="social-icon" aria-label="TikTok" target="_blank" rel="noopener noreferrer" style={{ fontSize: '13px', fontWeight: 800 }}>
                 TT
               </a>
               <a href="https://www.linkedin.com/company/110417500/admin/dashboard/" className="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                <Linkedin size={18} />
+                <Linkedin size={17} />
               </a>
             </div>
           </div>
+        </div>
 
-          {/* Col 4: Logo + Inspiration */}
-          <div className="footer-col">
-            <div className="footer-logo-container">
-              <img src="/logo.png" alt="prismifie" className="footer-logo-img" />
-              <p className="footer-inspiration">
-                « Aidons-nous à façonner l'avenir. »
-              </p>
-              <p className="footer-inspiration" style={{ fontSize: '13px', opacity: '0.8' }}>
-                Clarté · Créativité · Confiance
-              </p>
-              <p className="footer-copy">
-                PRISMIFIE © {new Date().getFullYear()}
-              </p>
-            </div>
+        <div className="footer-divider" style={{ maxWidth: '1280px', margin: '40px auto 24px' }} />
+
+        <div className="footer-bottom">
+          <p className="footer-copy">PRISMIFIE © {new Date().getFullYear()} — Tous droits réservés</p>
+          <div className="footer-bottom-links">
+            <Link to="/contact" className="footer-bottom-link">Contact</Link>
+            <Link to="/a-propos" className="footer-bottom-link">À propos</Link>
           </div>
-
         </div>
       </footer>
     </>

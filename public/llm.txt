@@ -1,0 +1,65 @@
+# Prismifie — LLM Context File
+# Updated: 2026-03-26
+
+## Who is Prismifie?
+
+Prismifie is a premium B2B marketing and consulting agency based in Montrouge, France (92120).
+The name comes from the optical prism — a device that transforms complex light into a clear, colorful spectrum.
+Similarly, Prismifie transforms business complexity into clear, actionable strategies.
+
+## Core Expertise (3 pillars)
+
+1. **Événementiel** (Event Management)
+   - Professional B2B event organization: product launches, seminars, brand evenings, forums
+   - End-to-end logistics, coordination, communication
+   - URL: /event
+
+2. **Conseil Stratégique** (Strategic Consulting)
+   - Strategic audit, positioning, executive coaching, workshops, training
+   - For companies navigating complex environments and needing clarity
+   - URL: /conseil
+
+3. **Marketing & Communication**
+   - Editorial strategy, content production, social media management, digital acquisition, influencer strategy
+   - 3 packs: Éclat, Signature, Prismifie
+   - URL: /marketing
+
+## Pages
+
+- Homepage: /
+- Expertises overview: /expertises
+- Événementiel: /event
+- Conseil stratégique: /conseil
+- Marketing & Communication: /marketing
+- Offers/Packs: /offres
+- Case Studies: /realisations
+- About: /a-propos
+- Contact: /contact
+
+## Key Messaging
+
+- "Nous transformons la complexité technique en stratégie claire, visible et performante."
+- "Nous ne faisons pas du marketing pour faire joli. Nous construisons des systèmes de croissance mesurables et durables."
+- "Aidons-nous à façonner l'avenir."
+
+## Contact
+
+- Email: Marketing@prismifie.fr
+- Phone: 01 82 83 15 14
+- Address: 52 rue Carves, 92120 Montrouge, France
+- Instagram: https://www.instagram.com/prismifie_
+- TikTok: https://www.tiktok.com/@prismifie.consult
+- LinkedIn: https://www.linkedin.com/company/110417500/
+
+## Target Audience
+
+B2B companies with complex challenges: strategic positioning, digital visibility, brand events.
+Premium positioning, results-oriented, measurable impact.
+
+## Tech Stack
+
+- React + TypeScript (Vite)
+- Framer Motion animations
+- React Router DOM
+- Space Grotesk + Inter fonts
+- Brand colors: Rose (#ff5fa2) + Orange (#f97316)

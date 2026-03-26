@@ -1,42 +1,47 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { SectionWrapper } from "../components/ui/SectionWrapper";
+import { Button } from "../components/ui/Button";
 
 const prestations = [
     {
         id: 1,
-        title: "Consulting Stratégique",
-        subtitle: "Diagnostic & Orientation",
-        description: "Analyse approfondie de votre écosystème pour identifier les leviers de croissance et structurer une roadmap claire.",
+        title: "Event",
+        subtitle: "Création d'expériences",
+        description: "Nous concevons et organisons des événements sur mesure pour les marques et les entreprises, de l'idée à la coordination le jour J.",
         points: [
-            "Audit & diagnostic",
-            "Benchmark marché",
-            "Roadmap stratégique"
+            "Conception \& logistique",
+            "Coordination des prestataires",
+            "Communication de l'événement"
         ],
-        image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800"
+        path: "/event",
+        image: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&q=80&w=800"
     },
     {
         id: 2,
-        title: "Stratégie & Branding",
-        subtitle: "Identité & Positionnement",
-        description: "Construction d’une identité forte et cohérente pour positionner votre marque avec justesse et impact.",
+        title: "Conseil",
+        subtitle: "Stratégie & Développement",
+        description: "Nous accompagnons les marques dans la structuration et l'optimisation de leur stratégie, via du consulting et des solutions digitales (Genist CRM, Agent IA).",
         points: [
-            "Positionnement",
-            "Identité visuelle",
-            "Storytelling"
+            "Consulting stratégique",
+            "Coaching & Formations",
+            "Logiciels de gestion web"
         ],
-        image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&q=80&w=800"
+        path: "/conseil",
+        image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800"
     },
     {
         id: 3,
-        title: "Présence Digitale",
-        subtitle: "Web & Visibilité",
-        description: "Création d’une présence digitale performante et alignée avec votre image de marque.",
+        title: "Marketing & Communication",
+        subtitle: "Image & Visibilité",
+        description: "Nous accompagnons les marques dans le développement de leur image à travers 3 packs allant de l'audit complet à la gestion clé en main.",
         points: [
-            "Site web",
-            "Contenu digital",
-            "Stratégie visibilité"
+            "PACK ÉCLAT ⭐⭐⭐",
+            "PACK SIGNATURE ⭐⭐⭐⭐",
+            "PACK PRISMIFIE ⭐⭐⭐⭐⭐"
         ],
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800"
+        path: "/marketing",
+        image: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&q=80&w=800"
     }
 ];
 
@@ -112,6 +117,11 @@ export function Prestations() {
 
                 .prestation-card:hover .prestation-image {
                     transform: scale(1.05);
+                }
+
+                .prestation-card {
+                    display: flex;
+                    flex-direction: column;
                 }
 
                 .prestation-content {
@@ -196,14 +206,21 @@ export function Prestations() {
                             <div className="prestation-image-wrapper">
                                 <img src={p.image} alt={p.title} className="prestation-image" />
                             </div>
-                            <div className="prestation-content">
-                                <div className="prestation-subtitle-text">{p.subtitle}</div>
-                                <h3 className="prestation-title">{p.title}</h3>
-                                <p className="prestation-description">{p.description}</p>
-                                <div className="prestation-points">
-                                    {p.points.map((point, i) => (
-                                        <div key={i} className="prestation-point">{point}</div>
-                                    ))}
+                            <div className="prestation-content" style={{ display: 'flex', flexDirection: 'column', height: '100%', flex: 1 }}>
+                                <div style={{ flexGrow: 1 }}>
+                                    <div className="prestation-subtitle-text">{p.subtitle}</div>
+                                    <h3 className="prestation-title">{p.title}</h3>
+                                    <p className="prestation-description">{p.description}</p>
+                                    <div className="prestation-points">
+                                        {p.points.map((point, i) => (
+                                            <div key={i} className="prestation-point">{point}</div>
+                                        ))}
+                                    </div>
+                                </div>
+                                <div style={{ marginTop: '32px' }}>
+                                    <Link to={p.path} style={{ textDecoration: 'none' }}>
+                                        <Button variant="outline" style={{ width: '100%' }}>Découvrir la prestation</Button>
+                                    </Link>
                                 </div>
                             </div>
                         </motion.div>
