@@ -15,12 +15,6 @@ const values = [
   { icon: "🌱", title: "Impact", desc: "Nous ne cherchons pas à faire du volume — nous cherchons à créer de la valeur réelle pour nos clients." },
 ];
 
-const team = [
-  { icon: "🎭", role: "Événementiel & expérience", name: "Équipe Événementiel" },
-  { icon: "🎯", role: "Stratégie & conseil", name: "Équipe Conseil" },
-  { icon: "📣", role: "Marketing & digital", name: "Équipe Marketing" },
-];
-
 export function AProposPage() {
   return (
     <div>

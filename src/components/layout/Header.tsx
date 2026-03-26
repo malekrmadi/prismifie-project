@@ -1,9 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import { Button } from "../ui/Button";
-
+import { Link, useLocation } from "react-router-dom";
 const expertisesLinks = [
   { name: "Événementiel", href: "/event", icon: "🎭" },
   { name: "Conseil stratégique", href: "/conseil", icon: "🎯" },
@@ -23,7 +21,6 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isExpertisesOpen, setIsExpertisesOpen] = useState(false);
   const [isMobileExpertisesOpen, setIsMobileExpertisesOpen] = useState(false);
-  const navigate = useNavigate();
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
