@@ -229,7 +229,7 @@ export function OffresPreview() {
       <span className="offres-label">Nos offres</span>
       <h2 className="offres-title">Trois niveaux d'engagement</h2>
       <p className="offres-desc">
-        Des packs pensés pour s'adapter à vos ambitions — tout est proposé sur devis.
+        Des packs pensés pour s'adapter à vos ambitions  tout est proposé sur devis.
       </p>
 
       <div className="offres-grid">

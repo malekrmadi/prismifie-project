@@ -1,10 +1,10 @@
-# Prismifie — LLM Context File
+# Prismifie  LLM Context File
 # Updated: 2026-03-26
 
 ## Who is Prismifie?
 
 Prismifie is a premium B2B marketing and consulting agency based in Montrouge, France (92120).
-The name comes from the optical prism — a device that transforms complex light into a clear, colorful spectrum.
+The name comes from the optical prism  a device that transforms complex light into a clear, colorful spectrum.
 Similarly, Prismifie transforms business complexity into clear, actionable strategies.
 
 ## Core Expertise (3 pillars)

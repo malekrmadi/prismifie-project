@@ -280,7 +280,7 @@ export function OffresPage() {
           <span className="offres-hero-label">Nos Offres</span>
           <h1 className="offres-hero-title">Des packs pensés pour chaque ambition</h1>
           <p className="offres-hero-desc">
-            Trois niveaux d'engagement pour répondre à vos objectifs — de la mise en place des fondations à l'excellence éditoriale. Tout est personnalisé sur devis.
+            Trois niveaux d'engagement pour répondre à vos objectifs  de la mise en place des fondations à l'excellence éditoriale. Tout est personnalisé sur devis.
           </p>
         </motion.div>
       </header>
@@ -348,7 +348,7 @@ export function OffresPage() {
           <span className="offres-note-icon">📋</span>
           <h3 className="offres-note-title">Tout est proposé sur devis</h3>
           <p className="offres-note-text">
-            Chaque entreprise est différente. Ces packs sont des templates de départ — nous adaptons systématiquement notre offre à vos enjeux spécifiques, votre secteur et votre budget lors d'un premier échange.
+            Chaque entreprise est différente. Ces packs sont des templates de départ  nous adaptons systématiquement notre offre à vos enjeux spécifiques, votre secteur et votre budget lors d'un premier échange.
           </p>
         </motion.div>
       </div>

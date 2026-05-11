@@ -201,7 +201,7 @@ export function EventPage() {
           <span className="event-hero-label">Expertise Événementiel</span>
           <h1 className="event-hero-title">Organisation d'événements professionnels qui marquent</h1>
           <p className="event-hero-desc">
-            Nous prenons en charge l'intégralité de votre projet événementiel — du concept au bilan post-événement. Chaque détail est orchestré pour créer une expérience impactante qui renforce votre image B2B.
+            Nous prenons en charge l'intégralité de votre projet événementiel  du concept au bilan post-événement. Chaque détail est orchestré pour créer une expérience impactante qui renforce votre image B2B.
           </p>
           <div className="event-hero-tags">
             <span className="event-hero-tag">Organisation événement entreprise</span>
@@ -238,7 +238,7 @@ export function EventPage() {
         <div className="event-value-inner">
           <h2 className="event-value-title">Un événement réussi, c'est un levier stratégique</h2>
           <p className="event-value-desc">
-            Les événements B2B ne sont pas des dépenses — ce sont des investissements dans votre notoriété, votre réseau et votre image de marque. Chaque événement bien orchestré génère de la confiance, des opportunités et de la fidélité.
+            Les événements B2B ne sont pas des dépenses  ce sont des investissements dans votre notoriété, votre réseau et votre image de marque. Chaque événement bien orchestré génère de la confiance, des opportunités et de la fidélité.
           </p>
           <div className="event-value-stats">
             <motion.div className="event-stat" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>

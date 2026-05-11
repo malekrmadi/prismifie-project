@@ -16,7 +16,7 @@ const differentiators = [
   {
     number: "03",
     title: "Résultats mesurables",
-    desc: "Chaque action est suivie d'indicateurs clairs. Pas de marketing pour faire joli — nous construisons des systèmes de croissance mesurables et durables.",
+    desc: "Chaque action est suivie d'indicateurs clairs. Pas de marketing pour faire joli  nous construisons des systèmes de croissance mesurables et durables.",
     icon: "📊",
   },
   {

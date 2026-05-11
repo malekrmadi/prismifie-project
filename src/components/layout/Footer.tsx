@@ -251,7 +251,7 @@ export function Footer() {
         <div className="footer-divider" style={{ maxWidth: '1280px', margin: '40px auto 24px' }} />
 
         <div className="footer-bottom">
-          <p className="footer-copy">PRISMIFIE © {new Date().getFullYear()} — Tous droits réservés</p>
+          <p className="footer-copy">PRISMIFIE © {new Date().getFullYear()}  Tous droits réservés</p>
           <div className="footer-bottom-links">
             <Link to="/contact" className="footer-bottom-link">Contact</Link>
             <Link to="/a-propos" className="footer-bottom-link">À propos</Link>

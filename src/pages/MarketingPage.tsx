@@ -46,7 +46,7 @@ const packs = [
 
 const pillars = [
   { icon: "✍️", title: "Stratégie éditoriale", desc: "Nous définissons votre ligne éditoriale, vos thèmes, vos formats et votre calendrier de publication pour une communication cohérente et intentionnelle." },
-  { icon: "🎨", title: "Production de contenu", desc: "Photos, vidéos, motion design, carousels, textes — nous produisons des contenus professionnels qui reflètent votre image et captent l'attention de votre cible." },
+  { icon: "🎨", title: "Production de contenu", desc: "Photos, vidéos, motion design, carousels, textes  nous produisons des contenus professionnels qui reflètent votre image et captent l'attention de votre cible." },
   { icon: "📱", title: "Gestion des réseaux sociaux", desc: "Prise en charge complète de vos comptes (LinkedIn, Instagram, TikTok) : publication, interaction, modération et reporting mensuel." },
   { icon: "🌟", title: "Stratégie d'influence", desc: "Identification et activation de créateurs de contenu pertinents dans votre secteur pour amplifier votre message avec authenticité." },
   { icon: "📈", title: "Acquisition digitale", desc: "Campagnes d'acquisition ciblées (paid social, SEO, emailing) pour générer des leads qualifiés et développer votre pipeline commercial." },

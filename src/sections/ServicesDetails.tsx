@@ -122,7 +122,7 @@ export function ServicesDetails() {
       <span className="services-details-label">Ce que nous faisons</span>
       <h2 className="services-details-title">Concrètement, nous agissons sur 6 leviers</h2>
       <p className="services-details-desc">
-        Une approche intégrée qui couvre l'ensemble de votre chaîne de valeur — de la stratégie à l'exécution.
+        Une approche intégrée qui couvre l'ensemble de votre chaîne de valeur  de la stratégie à l'exécution.
       </p>
 
       <div className="services-details-grid">

@@ -4,11 +4,11 @@ import { CTAFinal } from "../sections/CTAFinal";
 
 const services = [
   { icon: "🔍", title: "Audit stratégique", desc: "Analyse complète de votre positionnement, vos forces, vos angles morts et les opportunités inexploitées. Un diagnostic honnête pour repartir sur des bases solides." },
-  { icon: "🎯", title: "Positionnement & différenciation", desc: "Nous clarifions ce qui vous rend unique. Message, cible, proposition de valeur — tout est re-centré pour que vos prospects comprennent pourquoi choisir vous." },
+  { icon: "🎯", title: "Positionnement & différenciation", desc: "Nous clarifions ce qui vous rend unique. Message, cible, proposition de valeur  tout est re-centré pour que vos prospects comprennent pourquoi choisir vous." },
   { icon: "🛣️", title: "Feuille de route stratégique", desc: "À partir du diagnostic, nous co-construisons votre plan d'action : priorités, jalons, ressources nécessaires. Une vision claire sur 3 à 12 mois." },
   { icon: "👤", title: "Coaching dirigeant", desc: "Accompagnement individuel des dirigeants et managers clés pour développer leur leadership, leur clarté décisionnelle et leur impact dans des situations complexes." },
   { icon: "🎓", title: "Formations & ateliers", desc: "Sessions de formation sur mesure : prise de décision stratégique, management de l'incertitude, communication de direction, structuration d'offre." },
-  { icon: "🔄", title: "Suivi & ajustement", desc: "La stratégie n'est pas un document — c'est un système vivant. Nous assurons un suivi régulier pour ajuster le cap selon les résultats et l'évolution du contexte." },
+  { icon: "🔄", title: "Suivi & ajustement", desc: "La stratégie n'est pas un document  c'est un système vivant. Nous assurons un suivi régulier pour ajuster le cap selon les résultats et l'évolution du contexte." },
 ];
 
 const process = [
@@ -196,7 +196,7 @@ export function ConseilPage() {
             Structurez votre stratégie. Prenez de meilleures décisions.
           </h1>
           <p className="conseil-hero-desc">
-            Nous aidons les entreprises à naviguer dans la complexité et à structurer leur cap stratégique. Audit, positionnement, accompagnement dirigeant — une approche rigoureuse et terrain.
+            Nous aidons les entreprises à naviguer dans la complexité et à structurer leur cap stratégique. Audit, positionnement, accompagnement dirigeant  une approche rigoureuse et terrain.
           </p>
           <div className="conseil-hero-tags">
             <span className="conseil-hero-tag">Conseil stratégique entreprise</span>

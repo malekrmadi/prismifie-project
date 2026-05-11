@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { CTAFinal } from "../sections/CTAFinal";
 
 const timeline = [
-  { year: "Origine", title: "L'idée du prisme", desc: "Le nom Prismifie vient du prisme optique — cet objet qui décompose une lumière complexe en un spectre clair et coloré. C'est exactement ce que nous faisons avec les stratégies d'entreprise : transformer la complexité en clarté actionnable." },
-  { year: "Vision", title: "Notre mission", desc: "Aider les entreprises B2B à structurer leur stratégie, renforcer leur visibilité et construire des systèmes de croissance durables. Pas du conseil pour faire joli — du conseil pour avancer." },
+  { year: "Origine", title: "L'idée du prisme", desc: "Le nom Prismifie vient du prisme optique  cet objet qui décompose une lumière complexe en un spectre clair et coloré. C'est exactement ce que nous faisons avec les stratégies d'entreprise : transformer la complexité en clarté actionnable." },
+  { year: "Vision", title: "Notre mission", desc: "Aider les entreprises B2B à structurer leur stratégie, renforcer leur visibilité et construire des systèmes de croissance durables. Pas du conseil pour faire joli  du conseil pour avancer." },
   { year: "Aujourd'hui", title: "Une agence terrain", desc: "Une équipe experte, agile et engagée. Nous travaillons en proximité avec nos clients, avec un niveau d'exigence et de suivi qui nous distingue des grandes agences." },
 ];
 
@@ -12,7 +12,7 @@ const values = [
   { icon: "🔬", title: "Clarté", desc: "Nous prenons la complexité pour la transformer en stratégie simple, lisible et actionnables." },
   { icon: "⚡", title: "Efficacité", desc: "Chaque action est calibrée pour produire des résultats mesurables dans des délais définis." },
   { icon: "🤝", title: "Confiance", desc: "Nous construisons des relations durables, fondées sur la transparence et la performance." },
-  { icon: "🌱", title: "Impact", desc: "Nous ne cherchons pas à faire du volume — nous cherchons à créer de la valeur réelle pour nos clients." },
+  { icon: "🌱", title: "Impact", desc: "Nous ne cherchons pas à faire du volume  nous cherchons à créer de la valeur réelle pour nos clients." },
 ];
 
 export function AProposPage() {
@@ -234,7 +234,7 @@ export function AProposPage() {
       >
         <p className="apropos-quote-text">
           « Nous ne faisons pas du marketing pour faire joli. Nous construisons des{" "}
-          <span className="grd">systèmes de croissance mesurables</span> et durables — pour des entreprises qui ont des ambitions réelles. »
+          <span className="grd">systèmes de croissance mesurables</span> et durables  pour des entreprises qui ont des ambitions réelles. »
         </p>
       </motion.section>
 
@@ -294,10 +294,10 @@ export function AProposPage() {
         <span className="apropos-section-label">Notre positionnement</span>
         <h2 className="apropos-section-title">Marketing utile, concret, orienté résultats</h2>
         <p className="apropos-adn-text">
-          Dans un secteur où l'on vend souvent des rêves, Prismifie se positionne différemment. Chaque mission est cadrée avec des objectifs clairs, des livrables précis et des indicateurs de succès définis dès le départ. Nous travaillons sur le fonds — pas seulement sur la forme.
+          Dans un secteur où l'on vend souvent des rêves, Prismifie se positionne différemment. Chaque mission est cadrée avec des objectifs clairs, des livrables précis et des indicateurs de succès définis dès le départ. Nous travaillons sur le fonds  pas seulement sur la forme.
         </p>
         <p className="apropos-adn-text">
-          Notre approche combine <strong>rigueur analytique</strong> et <strong>créativité opérationnelle</strong>. Ce n'est pas l'un ou l'autre — c'est les deux, toujours.
+          Notre approche combine <strong>rigueur analytique</strong> et <strong>créativité opérationnelle</strong>. Ce n'est pas l'un ou l'autre  c'est les deux, toujours.
         </p>
         <Link to="/expertises" className="apropos-link-btn">
           Découvrir nos expertises →

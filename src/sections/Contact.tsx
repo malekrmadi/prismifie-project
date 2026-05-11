@@ -81,7 +81,7 @@ export function Contact() {
             color: '#111111',
             lineHeight: '1.3'
           }}>
-            Et si on <span style={{ color: '#EC4899', fontWeight: '700' }}>prismifiait</span> vos idées ?
+            Contactez-nous
           </h2>
 
           {status === 'success' ? (

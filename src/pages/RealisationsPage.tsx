@@ -220,7 +220,7 @@ export function RealisationsPage() {
           <span className="real-hero-label">Réalisations</span>
           <h1 className="real-hero-title">Des résultats concrets, pas des promesses</h1>
           <p className="real-hero-desc">
-            Découvrez comment nous avons accompagné des entreprises B2B dans leurs enjeux réels — de la stratégie à l'exécution, avec des résultats mesurables.
+            Découvrez comment nous avons accompagné des entreprises B2B dans leurs enjeux réels  de la stratégie à l'exécution, avec des résultats mesurables.
           </p>
         </motion.div>
       </header>

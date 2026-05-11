@@ -208,7 +208,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          Agence B2B premium — Événementiel, Conseil stratégique, Marketing & Communication.
+          Agence B2B premium  Événementiel, Conseil stratégique, Marketing & Communication.
           Nous construisons des systèmes de croissance mesurables pour les entreprises ambitieuses.
         </motion.p>
 

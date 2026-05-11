@@ -6,7 +6,7 @@ const expertises = [
   {
     icon: "🎭",
     title: "Événementiel",
-    desc: "Nous concevons et organisons des événements professionnels sur mesure — du concept à la coordination le jour J. Lancements produits, séminaires, soirées de marque : chaque événement est une opportunité de renforcer votre image.",
+    desc: "Nous concevons et organisons des événements professionnels sur mesure  du concept à la coordination le jour J. Lancements produits, séminaires, soirées de marque : chaque événement est une opportunité de renforcer votre image.",
     href: "/event",
     color: "#ff5fa2",
     gradient: "linear-gradient(135deg, rgba(255,95,162,0.07), rgba(255,95,162,0.02))",
@@ -219,7 +219,7 @@ export function ExpertisesPage() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Chaque expertise est une entrée complémentaire. Ensemble, elles forment un <strong>écosystème de croissance intégré</strong> — de l'événement au digital, en passant par la structuration stratégique. Nous intervenons séparément ou de manière combinée selon vos priorités.
+          Chaque expertise est une entrée complémentaire. Ensemble, elles forment un <strong>écosystème de croissance intégré</strong>  de l'événement au digital, en passant par la structuration stratégique. Nous intervenons séparément ou de manière combinée selon vos priorités.
         </motion.p>
       </div>
 

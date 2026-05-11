@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { sendContactEmails } from "../utils/emailjs";
 
 const budgets = [
   "Moins de 1 000€",
@@ -23,14 +24,26 @@ export function ContactPage() {
     name: "", company: "", email: "", phone: "", expertise: "", need: "", budget: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     setForm(f => ({ ...f, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setError("");
+    
+    const result = await sendContactEmails(form);
+    
+    setIsSubmitting(false);
+    if (result.success) {
+      setSubmitted(true);
+    } else {
+      setError("Une erreur s'est produite lors de l'envoi de votre demande. Veuillez réessayer plus tard.");
+    }
   }
 
   return (
@@ -327,8 +340,14 @@ export function ContactPage() {
                   </select>
                 </div>
 
-                <button type="submit" className="form-submit-btn">
-                  Envoyer ma demande ✦
+                {error && (
+                  <div style={{ color: '#ef4444', backgroundColor: '#fef2f2', padding: '12px', borderRadius: '8px', fontSize: '14px', marginBottom: '16px', border: '1px solid #fee2e2' }}>
+                    {error}
+                  </div>
+                )}
+                
+                <button type="submit" className="form-submit-btn" disabled={isSubmitting} style={{ opacity: isSubmitting ? 0.7 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer' }}>
+                  {isSubmitting ? 'Envoi en cours...' : 'Envoyer ma demande ✦'}
                 </button>
                 <p className="form-note">Réponse garantie sous 48h ouvrées · Échange confidentiel</p>
               </form>
